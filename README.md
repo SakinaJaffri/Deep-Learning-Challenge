@@ -1,48 +1,60 @@
-# Deep-Learning-Challenge
-![5e7d53b1a42f1f46ee6a0748](https://github.com/SakinaJaffri/Deep-Learning-Challenge/assets/146900226/24f16ba7-d679-4d6a-815d-928ceef04670)
-# Alphabet Soup Funding Prediction
+# Alphabet Soup Funding Prediction - Deep Learning Challenge
+
+![Alphabet Soup](https://github.com/SakinaJaffri/Deep-Learning-Challenge/assets/146900226/24f16ba7-d679-4d6a-815d-928ceef04670)
 
 ## Overview
 
-This project involves building a neural network model for binary classification to predict the success of organizations funded by Alphabet Soup based on given features in the dataset. The aim is to analyze a dataset of over 34,000 funded organizations and use machine learning techniques, including neural networks, to predict the success of future applicants.
+This project involves building a neural network model to predict the success of organizations funded by **Alphabet Soup**. Using a dataset of over 34,000 funded organizations, the goal is to develop a binary classification model that can accurately predict whether future funding applications will be successful based on a set of features.
 
-## Analysis Details
+## Objective
 
-- **Objective**: Train and evaluate a model to predict the success of Alphabet Soup-funded organizations using historical data.
-  
-- **Features and Target Variables**:
-  - **Target Variable**: `IS_SUCCESSFUL` (success or failure)
-  - **Features**: `APPLICATION_TYPE`, `AFFILIATION`, `CLASSIFICATION`, `USE_CASE`, `ORGANIZATION`, `STATUS`, `INCOME_AMT`, `SPECIAL_CONSIDERATIONS`, `ASK_AMT`
-  - **Excluded**: `EIN` and `NAME` (neither target nor features)
+- **Target**: Predict the `IS_SUCCESSFUL` variable (success or failure) based on organization details.
+- **Features**: 
+  - `APPLICATION_TYPE`, `AFFILIATION`, `CLASSIFICATION`, `USE_CASE`, `ORGANIZATION`, `STATUS`, `INCOME_AMT`, `SPECIAL_CONSIDERATIONS`, `ASK_AMT`
+- **Excluded Columns**: `EIN`, `NAME`
 
 ## Data Preprocessing
 
-- **Data Cleaning**:
-  - Read CSV data into a Pandas DataFrame.
-  - Drop irrelevant columns (`EIN`, `NAME`).
+- **Cleaning**: Dropped unnecessary columns (`EIN`, `NAME`).
+- **Feature Engineering**: Grouped rare categories in `APPLICATION_TYPE` and `CLASSIFICATION` into an "Others" category.
+- **Encoding**: Categorical features were converted into numerical dummy variables.
+- **Scaling**: Applied `StandardScaler` to normalize the data.
 
-- **Feature Engineering**:
-  - Group rare occurrences in `APPLICATION_TYPE` and `CLASSIFICATION` into an "Others" category.
-  - Convert categorical features into dummy variables for numerical representation.
-  - Scale the data using `StandardScaler` for normalization.
+## Model Architecture
 
+- **Neural Network Model**: 
+  - Input, hidden, and output layers designed for binary classification.
+  - Different configurations of layer sizes and activation functions were tested.
+  
 - **Optimization**:
-  - Utilize PCA to reduce dimensionality and optimize the model's complexity.
-  - Experiment with different feature sets and preprocessing techniques.
+  - Experimented with multiple architectures and used `keras-tuner` to improve model performance.
+  - Principal Component Analysis (PCA) was used to reduce dimensionality in certain trials.
 
-## Model Architecture and Results
+## Results
 
-- **Model Structure**:
-  - Neural network with input, hidden, and output layers.
-  - Various configurations of layer sizes, activation functions, and units.
-
-- **Results**:
-  - Initial model achieved an accuracy of 72.54%.
-  - Optimization attempts:
-    - Experimented with different layer sizes and activation functions.
-    - Used `keras-tuner` to optimize architecture but achieved a maximum accuracy of 73.30%, falling short of the 75% target.
+- **Initial Model**: Achieved an accuracy of 72.54%.
+- **Optimized Model**: Maximum accuracy of 73.30% after hyperparameter tuning and experimentation.
+- **Target**: While the goal was to achieve 75% accuracy, further improvements are required to meet this threshold.
 
 ## Summary
 
-Despite rigorous optimization efforts, including adjusting model architectures and hyperparameter tuning, the achieved accuracy of 73.30% underscores the challenge of accurately predicting success for Alphabet Soup-funded organizations. Further refinement and exploration may be needed to bridge the gap and improve predictive performance.
+Despite extensive efforts in preprocessing, feature engineering, and model optimization, the highest accuracy achieved was 73.30%. The project highlights the complexities of predicting the success of funded organizations and suggests room for further refinement and exploration to improve model accuracy.
 
+## Technologies Used
+
+- **Python**
+- **TensorFlow/Keras**
+- **Pandas**
+- **Scikit-learn**
+- **Jupyter Notebook**
+
+## How to Run
+
+1. Clone the repository to your local machine.
+2. Install the required dependencies listed in `requirements.txt`.
+3. Run the Jupyter Notebook to preprocess the data and train the model.
+4. Experiment with different neural network architectures and optimizations.
+
+## Contributors
+
+- **Sakina Jaffri** - Project Developer
