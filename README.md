@@ -1,4 +1,4 @@
-# Alphabet Soup Funding Prediction - Deep Learning Challenge
+# Alphabet Soup Funding Prediction - Deep Learning 
 
 ![Alphabet Soup](https://github.com/SakinaJaffri/Deep-Learning-Challenge/assets/146900226/24f16ba7-d679-4d6a-815d-928ceef04670)
 
